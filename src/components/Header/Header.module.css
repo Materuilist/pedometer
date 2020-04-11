@@ -1,0 +1,16 @@
+.Header{
+    background-color: #1C2025;
+    width: 100%;
+    padding: 0 0 0 20px;
+}
+
+.Content{
+    font-family: 'PT Sans Caption', sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 31px;
+    font-weight: bold;
+    height: 60px;
+    display: table-cell;
+    vertical-align: middle;
+}
