@@ -13,7 +13,7 @@ export default function(prevState=initialState, action){
     switch(action.type){
         case SET_ACTIVITIES:{
             const newState = _.cloneDeep(prevState);
-            newState.activities = action.activities;
+            newState.activities.data = action.activities;
             return newState;
         }
         default:{

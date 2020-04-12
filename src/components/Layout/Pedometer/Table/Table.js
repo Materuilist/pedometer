@@ -1,15 +1,26 @@
-import React from 'react';
+import React from "react";
 
-import cssClasses from './Table.module.css';
+import { connect } from "react-redux";
+import { fetchActivities } from "../../../../redux/actions/creators";
 
-class Table extends React.Component{
-    render(){
-        return(
-            <div className={cssClasses.Table}>
-                Table
-            </div>
-        )
-    }
+import cssClasses from "./Table.module.css";
+
+class Table extends React.Component {
+  componentDidMount() {
+    this.props.fetchActivities();
+  }
+
+  render() {
+    return <div className={cssClasses.Table}>Table</div>;
+  }
 }
 
-export default Table;
+const mapStateToProps = (state, ownProps) => ({
+  activities: state.activities.data,
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchActivities: () => dispatch(fetchActivities()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

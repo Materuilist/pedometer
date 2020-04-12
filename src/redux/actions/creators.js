@@ -18,6 +18,6 @@ export function fetchActivities(){
     return async function(dispatch){
         const res = await fetch('http://localhost:3000/walking');
         const activities = await res.json();
-        setActivities(activities);
+        dispatch(setActivities(activities));
     }
 }
