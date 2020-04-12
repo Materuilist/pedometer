@@ -1,0 +1,8 @@
+.SortByLabel:first-child{
+    margin-right: 60px;
+}
+
+.SortByLabel svg{
+    margin-left: 10px;
+    transition: all .3s ease-out;
+}

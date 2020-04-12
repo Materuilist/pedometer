@@ -1,0 +1,36 @@
+.Row{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 16px;
+    height: 40px;
+}
+
+.Row>div{
+    display: flex;
+    align-items: center;
+}
+
+.Date{
+    width:138px;
+    
+}
+
+.Date>div{
+    line-height: 12px;
+}
+
+.Date>div>div:first-child{
+    color: rgba(28, 32, 37, 0.4);
+    font-size: 9px;
+}
+
+.Row>div:last-child{
+    width:181px;
+}
+
+.Row:nth-child(2n){
+    background-color: #efeff0;
+}
+.Row:nth-child(2n+1){
+    background-color: #ffffff;
+}
