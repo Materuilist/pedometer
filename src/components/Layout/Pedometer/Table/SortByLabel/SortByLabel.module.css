@@ -1,8 +1,13 @@
+.SortByLabel{
+    font-size: 14px;
+}
+
 .SortByLabel:first-child{
-    margin-right: 60px;
+    margin-right: 80px;
 }
 
 .SortByLabel svg{
     margin-left: 10px;
     transition: all .3s ease-out;
+    vertical-align: middle;
 }

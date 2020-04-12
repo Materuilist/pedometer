@@ -23,6 +23,16 @@ export default function ({ activity }) {
   const yy = date.getFullYear();
   const displayedDate =
     dd.toString() + "." + mm.toString() + "." + yy.toString();
+
+  //N километров M метров
+  const km = Math.floor(distance / 1000);
+  const m = distance % 1000;;
+  let displayedDistance;
+  if(km > 0){
+    displayedDistance = km + ' километров ' + m + ' метров';
+  }else{
+    displayedDistance = m + ' метров';
+  }
   return (
     <div className={cssClasses.Row}>
       <div className={cssClasses.Date}>
@@ -31,7 +41,7 @@ export default function ({ activity }) {
           <div>{displayedDate}</div>
         </div>
       </div>
-      <div>{distance}</div>
+      <div>{displayedDistance}</div>
     </div>
   );
 }
