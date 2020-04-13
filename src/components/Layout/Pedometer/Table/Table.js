@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 
 import { connect } from "react-redux";
-import { fetchActivities } from "../../../../redux/actions/creators";
+import { fetchActivities, postActivity } from "../../../../redux/actions/creators";
 
 import cssClasses from "./Table.module.css";
 import Header from "../../../UI/Header/Header";
@@ -58,6 +58,13 @@ class Table extends React.Component {
     return sortedActivities;
   }
 
+  postActivity(event){
+    event.preventDefault();
+    this.props.postActivity(event.target.distance.value);
+    event.target.distance.value = null;
+    this.toggleModalVisibility();
+  }
+
   toggleModalVisibility() {
     this.setState((prevState) => ({ showModal: !prevState.showModal }));
   }
@@ -71,7 +78,7 @@ class Table extends React.Component {
           dismissHandler={this.toggleModalVisibility.bind(this)}
           show={this.state.showModal}
         >
-          <AddRowForm />
+          <AddRowForm submitHandler={this.postActivity.bind(this)}/>
         </Modal>
         <Header>
           <div className={cssClasses.HeaderContent}>
@@ -110,6 +117,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchActivities: () => dispatch(fetchActivities()),
+  postActivity: (distance)=>dispatch(postActivity(distance))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);

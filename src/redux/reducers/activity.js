@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { SET_ACTIVITIES, ADD_ACTIVITY } from '../actions/types';
+import { SET_ACTIVITIES } from '../actions/types';
 
 const initialState = {
     activities:{

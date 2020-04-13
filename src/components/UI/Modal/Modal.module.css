@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    width: 70%;
+    width: fit-content;
     height: fit-content;
     background-color: #e7dede;
     border: .9px solid #ccc7cc;

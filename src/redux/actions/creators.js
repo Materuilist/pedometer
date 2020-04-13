@@ -1,10 +1,22 @@
-import { ADD_ACTIVITY, SET_ACTIVITIES, ALTER_ACTIVITY, REMOVE_ACTIVITY } from "./types";
+import { SET_ACTIVITIES} from "./types";
 
-export function addActivity(activity){
-    return({
-        type:ADD_ACTIVITY,
-        activity
-    })
+export function postActivity(distance){
+    return async function(dispatch){
+        const date = new Date(Date.now());
+        const res = await fetch('http://localhost:3000/walking', {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                date,
+                distance
+            })
+        })
+        if(res.status===201){
+            dispatch(fetchActivities());
+        }
+    }
 }
 
 export function setActivities(activities){
