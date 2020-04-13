@@ -39,7 +39,24 @@ class Table extends React.Component {
     });
   }
 
+  sortActivities() {
+    let sortedActivities = _.cloneDeep(this.props.activities);
+    sortedActivities.sort((a, b) => {
+      const sortBy = this.state.sorting.date.active ? "date" : "distance";
+      let diff;
+      if (sortBy === "date") {
+        diff = Date.parse(a[sortBy]) - Date.parse(b[sortBy]);
+      } else {
+        diff = a[sortBy] - b[sortBy];
+      }
+      return this.state.sorting[sortBy].upstream ? diff : diff * -1;
+    });
+    return sortedActivities;
+  }
+
   render() {
+    const sortedActivities = this.sortActivities();
+
     return (
       <div className={cssClasses.Table}>
         <Header>
@@ -58,7 +75,7 @@ class Table extends React.Component {
             />
           </div>
         </Header>
-        <Rows activities={this.props.activities} />
+        <Rows activities={sortedActivities} />
       </div>
     );
   }
