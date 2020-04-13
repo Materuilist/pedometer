@@ -9,6 +9,8 @@ import Header from "../../../UI/Header/Header";
 import Rows from "./Rows/Rows";
 import SortByLabel from "./SortByLabel/SortByLabel";
 import Button from "../../../UI/Button/Button";
+import Modal from "../../../UI/Modal/Modal";
+import AddRowForm from "./AddRowForm/AddRowForm";
 
 class Table extends React.Component {
   state = {
@@ -22,6 +24,7 @@ class Table extends React.Component {
         upstream: true,
       },
     },
+    showModal: false,
   };
 
   componentDidMount() {
@@ -55,11 +58,21 @@ class Table extends React.Component {
     return sortedActivities;
   }
 
+  toggleModalVisibility() {
+    this.setState((prevState) => ({ showModal: !prevState.showModal }));
+  }
+
   render() {
     const sortedActivities = this.sortActivities();
 
     return (
       <div className={cssClasses.Table}>
+        <Modal
+          dismissHandler={this.toggleModalVisibility.bind(this)}
+          show={this.state.showModal}
+        >
+          <AddRowForm />
+        </Modal>
         <Header>
           <div className={cssClasses.HeaderContent}>
             <SortByLabel
@@ -78,8 +91,13 @@ class Table extends React.Component {
         </Header>
         <Rows activities={sortedActivities} />
         <Button
+          clickHandler={this.toggleModalVisibility.bind(this)}
           label="Добавить запись"
-          extraStyling={{ fontSize: "18px", lineHeight: "23px", height:'60px' }}
+          extraStyling={{
+            fontSize: "18px",
+            lineHeight: "23px",
+            height: "60px",
+          }}
         />
       </div>
     );
