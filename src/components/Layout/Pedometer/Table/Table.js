@@ -80,7 +80,7 @@ class Table extends React.Component {
         >
           <AddRowForm submitHandler={this.postActivity.bind(this)}/>
         </Modal>
-        <Header>
+        <Header extraStyling={{height:'40px'}} contentStyling={{height:'40px'}}>
           <div className={cssClasses.HeaderContent}>
             <SortByLabel
               title="Дата"

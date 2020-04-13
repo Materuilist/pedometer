@@ -19,6 +19,7 @@
 
 input.FormItem{
     border-radius: 5%;
+    width:200px;
 }
 
 button.FormItem{
