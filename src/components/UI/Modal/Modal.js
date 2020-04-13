@@ -11,13 +11,13 @@ export default function ({ show, children, dismissHandler }) {
       <Backdrop clickHandler={dismissHandler} show={show} />
       <CSSTransition
         in={show}
-        timeout={300}
+        timeout={0}
         classNames={{
           enter: cssCLasses.ModalEnter,
-          enterActive: cssCLasses.ModalEnterActive,
+          // enterActive: cssCLasses.ModalEnterActive,
           enterDone: cssCLasses.ModalEnterDone,
           exit: cssCLasses.ModalExit,
-          exitActive: cssCLasses.ModalExitActive,
+          // exitActive: cssCLasses.ModalExitActive,
           exitDone: cssCLasses.ModalExitDone,
         }}
       >

@@ -2,31 +2,38 @@
     z-index: 1000;
     position: absolute;
     top:-100%;
-    left: 15%;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 70%;
-    height: 50%;
+    height: fit-content;
     background-color: #e7dede;
     border: .9px solid #ccc7cc;
-    border-radius: 5%;
     padding: 10%;
-    transition: .3s ease-out;
+    transition: all .3s ease-out;
 }
 
 .ModalEnter{
     top:-100%;
+    box-shadow: none;
 }
-.ModalEnterActive{
-    top: 30%;
-}
+/* .ModalEnterActive{
+    box-shadow: .5px .5px 2.5px #EC174F;
+} */
 .ModalEnterDone{
-    top:20%;
+    top:0;
+    bottom: 0;
+    box-shadow: 3px 3px 5px #EC174F;
 }
 .ModalExit{
-    top:20%;
+    top:0;
+    bottom: 0;
+    box-shadow: 3px 3px 5px #EC174F;
 }
-.ModalExitActive{
-    top:30%;
-}
+/* .ModalExitActive{
+    box-shadow: .5px .5px 2.5px #EC174F;
+} */
 .ModalExitDone{
     top:-100%;
+    box-shadow: none;
 }

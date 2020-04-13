@@ -1,0 +1,29 @@
+.AddRowForm{
+    margin: 10px auto;
+}
+
+
+.FormItem{
+    display: block;
+    margin: 0 auto 1rem auto;
+    outline: none;
+    padding: 10px;
+    border: .9px solid #EC174F;
+    transition: all .3s ease-out;
+}
+
+.FormItem:hover{
+    transform: scale(1.1);
+}
+
+input.FormItem{
+    border-radius: 5%;
+}
+
+button.FormItem{
+    border-radius: 20%;
+    cursor: pointer;
+}
+button.FormItem:hover{
+    background-color: #EC174F;
+}
