@@ -8,6 +8,7 @@ import cssClasses from "./Table.module.css";
 import Header from "../../../UI/Header/Header";
 import Rows from "./Rows/Rows";
 import SortByLabel from "./SortByLabel/SortByLabel";
+import Button from "../../../UI/Button/Button";
 
 class Table extends React.Component {
   state = {
@@ -76,6 +77,10 @@ class Table extends React.Component {
           </div>
         </Header>
         <Rows activities={sortedActivities} />
+        <Button
+          label="Добавить запись"
+          extraStyling={{ fontSize: "18px", lineHeight: "23px", height:'60px' }}
+        />
       </div>
     );
   }

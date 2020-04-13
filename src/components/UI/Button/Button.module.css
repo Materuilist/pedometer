@@ -1,0 +1,20 @@
+.Button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'PT Sans Caption', sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    cursor: pointer;
+    background: #EC174F;
+    color:#ffffff;
+    transition: all .2s ease-out;
+}
+
+.Button:hover{
+    opacity: .8;
+}
