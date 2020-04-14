@@ -1,5 +1,7 @@
 import React from "react";
 
+import convertDistance from '../../../../../../util/convertDistance';
+
 import cssClasses from "./Row.module.css";
 
 export default function ({ activity }) {
@@ -24,18 +26,7 @@ export default function ({ activity }) {
   const displayedDate =
     dd.toString() + "." + mm.toString() + "." + yy.toString();
 
-  //N километров M метров
-  const km = Math.floor(distance / 1000);
-  const m = distance % 1000;
-  let displayedDistance;
-  if(km > 0){
-    displayedDistance = km + ' километров ';
-    if(m!==0){
-      displayedDistance+= m + ' метров';
-    }
-  }else{
-    displayedDistance = m + ' метров';
-  }
+  const displayedDistance = convertDistance(distance);
   return (
     <div className={cssClasses.Row}>
       <div className={cssClasses.Date}>

@@ -4,3 +4,25 @@
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
     margin-left: 20px;
 }
+
+.Footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Footer>div:first-child{
+    display: flex;
+    
+}
+.Footer>div:first-child>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 22px;
+}
+
+.Footer>div:last-child{
+    margin-right: 20px;
+    text-align: right;
+    line-height: 23px;
+}
