@@ -1,7 +1,20 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
 
-export default function(){
-    return (<div>
-        Graph
-    </div>)
+import Footer from "../../../UI/Header/Header";
+
+import cssClasses from "./Graph.module.css";
+
+function Graph({ activities }) {
+  return (
+    <div className={cssClasses.Graph}>
+      <Footer></Footer>
+    </div>
+  );
 }
+
+const mapStateToProps = (state, ownProps) => ({
+  activities: state.activities.data,
+});
+
+export default connect(mapStateToProps)(Graph);

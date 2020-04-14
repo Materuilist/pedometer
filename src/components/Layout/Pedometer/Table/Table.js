@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 
 import { connect } from "react-redux";
-import { fetchActivities, postActivity } from "../../../../redux/actions/creators";
+import { postActivity } from "../../../../redux/actions/creators";
 
 import cssClasses from "./Table.module.css";
 import Header from "../../../UI/Header/Header";
@@ -26,10 +26,6 @@ class Table extends React.Component {
     },
     showModal: false,
   };
-
-  componentDidMount() {
-    this.props.fetchActivities();
-  }
 
   toggleSorting(title) {
     this.setState((prevState) => {
@@ -116,7 +112,6 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchActivities: () => dispatch(fetchActivities()),
   postActivity: (distance)=>dispatch(postActivity(distance))
 });
 
